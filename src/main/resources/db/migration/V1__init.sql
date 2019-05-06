@@ -59,7 +59,7 @@ create table driver_transports
 );
 
 
-create table schedule
+create table schedules
 (
     id            bigint primary key auto_increment,
     line_id       bigint   not null,
@@ -76,6 +76,42 @@ create table schedule
     foreign key (start_stop_id) references stops (id),
     foreign key (end_stop_id) references stops (id)
 );
+
+
+create table days_of_week
+(
+    id   bigint primary key auto_increment,
+    name varchar(20) not null
+);
+
+create table stop_schedules
+(
+    id             bigint primary key auto_increment,
+    line_id        bigint not null,
+    arrives_at     time   not null,
+    stop_id        bigint not null,
+    day_of_week_id bigint not null,
+
+    foreign key (line_id) references lines (id),
+    foreign key (stop_id) references stops (id),
+    foreign key (day_of_week_id) references days_of_week (id)
+);
+
+
+create table line_schedules
+(
+    id            bigint primary key auto_increment,
+    line_id       bigint not null,
+    final_stop_id bigint not null,
+    position      bigint not null,
+    stop_id       bigint not null,
+
+    foreign key (line_id) references lines (id),
+    foreign key (final_stop_id) references stops (id),
+    foreign key (stop_id) references stops (id)
+);
+
+
 
 
 

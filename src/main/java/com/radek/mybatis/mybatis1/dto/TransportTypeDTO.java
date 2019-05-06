@@ -9,11 +9,7 @@ import java.io.Serializable;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class LineScheduleDTO implements Serializable {
+public class TransportTypeDTO implements Serializable {
 
-    private Long lineId;
-    private Long finalStopId;
-    private Long position;
-    private Long stopId;
-
+    private String name;
 }

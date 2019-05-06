@@ -5,15 +5,15 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
+import java.time.LocalDateTime;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class LineScheduleDTO implements Serializable {
+public class StopScheduleDTO implements Serializable {
 
     private Long lineId;
-    private Long finalStopId;
-    private Long position;
+    private LocalDateTime arrivesAt;
     private Long stopId;
-
+    private Long dayOfWeekId;
 }

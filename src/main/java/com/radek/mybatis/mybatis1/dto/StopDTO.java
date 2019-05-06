@@ -9,13 +9,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
-public class LineDTO implements Serializable {
+@AllArgsConstructor
+public class StopDTO implements Serializable {
 
     private String name;
     private Long transportTypeId;
 
-    private List<LineScheduleDTO> lineScheduleDTOList = new ArrayList<>();
-
+    private List<StopScheduleDTO> stopScheduleDTOList = new ArrayList<>();
 }

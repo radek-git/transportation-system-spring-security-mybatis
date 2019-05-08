@@ -19,10 +19,10 @@ values ( 1, 1, 1, current_timestamp(), current_timestamp(), 1 ,1 );
 insert into days_of_week (name) values ( 'monday' ), ('tuesday'), ('wednesday'), ('thursday'), ('friday'), ('saturday'),
                                        ('sunday');
 
-insert into stop_schedules (line_id, arrives_at, stop_id, day_of_week_id)
+insert into stop_lines (line_id, arrives_at, stop_id, day_of_week_id)
 values ( 1, '10:04:00', 1, 1 ), ( 1, '10:12:00', 1, 1 ), ( 1, '10:18:00', 1, 1 );
 
-insert into line_schedules (line_id, final_stop_id, position, stop_id)
+insert into line_stops (line_id, final_stop_id, position, stop_id)
 values ( 1, 4, 1, 1 ), ( 1, 4, 2, 2 ), ( 1, 4, 3, 3 ), ( 1, 4, 4, 4 );
 
 

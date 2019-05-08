@@ -84,7 +84,7 @@ create table days_of_week
     name varchar(20) not null
 );
 
-create table stop_schedules
+create table stop_lines
 (
     id             bigint primary key auto_increment,
     line_id        bigint not null,
@@ -98,7 +98,7 @@ create table stop_schedules
 );
 
 
-create table line_schedules
+create table line_stops
 (
     id            bigint primary key auto_increment,
     line_id       bigint not null,

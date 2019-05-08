@@ -1,6 +1,8 @@
 package com.radek.mybatis.mybatis1.controller;
 
+import com.radek.mybatis.mybatis1.dto.DriverDTO;
 import com.radek.mybatis.mybatis1.entity.Driver;
+import com.radek.mybatis.mybatis1.mapper.DriverMapper;
 import com.radek.mybatis.mybatis1.service.DriverService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,21 +15,23 @@ import java.util.List;
 public class DriverController {
 
     private DriverService driverService;
+    private DriverMapper driverMapper;
 
     @Autowired
-    public DriverController(DriverService driverService) {
+    public DriverController(DriverService driverService, DriverMapper driverMapper) {
         this.driverService = driverService;
+        this.driverMapper = driverMapper;
     }
 
     @GetMapping("/drivers")
-    public List<Driver> findAll() {
-        return driverService.findAll();
+    public List<DriverDTO> findAll() {
+        return driverMapper.toDTO(driverService.findAll());
     }
 
 
-    @GetMapping("/drivers/{id}")
-    public Driver findById(@PathVariable Long id) {
-        return driverService.findById(id);
+    @GetMapping("/drivers/id/{id}")
+    public DriverDTO findById(@PathVariable Long id) {
+        return driverMapper.toDTO(driverService.findById(id));
     }
 
 //    @GetMapping("/drivers/{pesel}")
@@ -36,7 +40,7 @@ public class DriverController {
 //    }
 
     @GetMapping("/drivers/{surname}")
-    public Driver findBySurname(@PathVariable String surname) {
-        return driverService.findBySurname(surname);
+    public DriverDTO findBySurname(@PathVariable String surname) {
+        return driverMapper.toDTO(driverService.findBySurname(surname));
     }
 }

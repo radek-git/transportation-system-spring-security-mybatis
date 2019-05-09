@@ -1,7 +1,5 @@
 package com.radek.mybatis.mybatis1.entity;
 
-import com.radek.mybatis.mybatis1.entity.AbstractEntity;
-import com.radek.mybatis.mybatis1.entity.Line;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

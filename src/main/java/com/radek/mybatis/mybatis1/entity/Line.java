@@ -16,7 +16,7 @@ public class Line extends AbstractEntity {
     //    private Long transportTypeId;
     private TransportType transportType;
 
-    private List<LineSchedule> lineSchedules = new ArrayList<>();
+    private List<LineStop> lineStops = new ArrayList<>();
 
 
 }

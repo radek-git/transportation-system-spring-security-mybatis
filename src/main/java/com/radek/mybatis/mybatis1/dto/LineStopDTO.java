@@ -9,11 +9,11 @@ import java.io.Serializable;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class LineScheduleDTO implements Serializable {
+public class LineStopDTO implements Serializable {
 
-    private Long lineId;
-    private Long finalStopId;
     private Long position;
-    private Long stopId;
+    private String line;
+    private String finalStop;
+    private String stop;
 
 }

@@ -14,7 +14,7 @@ import java.util.List;
 public class StopDTO implements Serializable {
 
     private String name;
-    private Long transportTypeId;
+    private String transportType;
 
-    private List<StopScheduleDTO> stopScheduleDTOList = new ArrayList<>();
+//    private List<StopLineDTO> stopLineDTOList = new ArrayList<>();
 }

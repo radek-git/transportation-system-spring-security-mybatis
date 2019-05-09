@@ -14,8 +14,8 @@ import java.util.List;
 public class LineDTO implements Serializable {
 
     private String name;
-    private Long transportTypeId;
+    private String transportType;
 
-    private List<LineScheduleDTO> lineScheduleDTOList = new ArrayList<>();
+//    private List<LineStopDTO> lineStopDTOList = new ArrayList<>();
 
 }

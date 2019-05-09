@@ -18,6 +18,6 @@ public class Stop extends AbstractEntity{
     private TransportType transportType;
     private boolean isTerminal;
 
-    private List<StopSchedule> stopSchedules = new ArrayList<>();
+    private List<StopLine> stopLines = new ArrayList<>();
 
 }

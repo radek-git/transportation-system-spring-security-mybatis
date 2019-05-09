@@ -11,5 +11,5 @@ import java.io.Serializable;
 @NoArgsConstructor
 public class VehicleDTO implements Serializable {
 
-    private Long transportTypeId;
+    private String transportType;
 }

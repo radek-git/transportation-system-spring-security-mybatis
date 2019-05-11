@@ -14,7 +14,8 @@ insert into drivers (name, surname, pesel) values ( 'Jan', 'Nowak', '80111112345
 insert into driver_transports (driver_id, transport_type_id) values (1, 1), (2, 1), (3, 1);
 
 insert into schedules (line_id, vehicle_id, driver_id, starts_at, ends_at, start_stop_id, end_stop_id)
-values ( 1, 1, 1, current_timestamp(), current_timestamp(), 1 ,1 );
+values ( 1, 1, 1, current_timestamp(), current_timestamp(), 1 ,3 ),
+( 2, 2, 3, current_timestamp(), current_timestamp(), 1 ,3 );
 
 insert into days_of_week (name) values ( 'monday' ), ('tuesday'), ('wednesday'), ('thursday'), ('friday'), ('saturday'),
                                        ('sunday');

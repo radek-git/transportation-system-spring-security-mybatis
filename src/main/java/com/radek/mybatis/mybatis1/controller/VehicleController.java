@@ -1,6 +1,8 @@
 package com.radek.mybatis.mybatis1.controller;
 
+import com.radek.mybatis.mybatis1.dto.VehicleDTO;
 import com.radek.mybatis.mybatis1.entity.Vehicle;
+import com.radek.mybatis.mybatis1.mapper.VehicleMapper;
 import com.radek.mybatis.mybatis1.service.VehicleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,19 +15,24 @@ import java.util.List;
 public class VehicleController {
 
     private VehicleService vehicleService;
+    private VehicleMapper vehicleMapper;
+
 
     @Autowired
-    public VehicleController(VehicleService vehicleService) {
+    public VehicleController(VehicleService vehicleService, VehicleMapper vehicleMapper) {
         this.vehicleService = vehicleService;
+        this.vehicleMapper = vehicleMapper;
     }
 
+
+
     @GetMapping("/vehicles")
-    public List<Vehicle> findAll() {
-        return vehicleService.findAll();
+    public List<VehicleDTO> findAll() {
+        return vehicleMapper.toDTO(vehicleService.findAll());
     }
 
     @GetMapping("/vehicles/{id}")
-    public Vehicle findById(@PathVariable Long id) {
-        return vehicleService.findById(id);
+    public VehicleDTO findById(@PathVariable Long id) {
+        return vehicleMapper.toDTO(vehicleService.findById(id));
     }
 }

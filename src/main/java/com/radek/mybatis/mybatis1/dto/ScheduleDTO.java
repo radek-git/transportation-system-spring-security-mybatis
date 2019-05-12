@@ -1,7 +1,5 @@
 package com.radek.mybatis.mybatis1.dto;
 
-import com.radek.mybatis.mybatis1.entity.Stop;
-import com.radek.mybatis.mybatis1.entity.Vehicle;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

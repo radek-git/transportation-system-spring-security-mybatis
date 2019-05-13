@@ -24,4 +24,8 @@ public class LineService {
     public Line findById(Long id) {
         return lineRepository.findById(id).orElseThrow(() -> new RuntimeException("nie ma"));
     }
+
+    public Line findByName(String name) {
+        return lineRepository.findByName(name).orElseThrow(() -> new RuntimeException("Nie ma takiej linii"));
+    }
 }

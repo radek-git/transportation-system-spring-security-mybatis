@@ -20,6 +20,6 @@ public interface DayOfWeekRepository {
 }
 
 //dokończyć mapowania- line i stop.
-//stop ma mieć listę StopSchedule
+//stop ma mieć listę StopLine
 //całe api ma operować na dto - dla każdej klasy i zamiast obiektów mają być id
 //zmodyfikować kontrolery - mają wyświetlać dto a nie entity

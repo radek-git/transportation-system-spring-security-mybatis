@@ -19,8 +19,8 @@ public interface LineRepository {
             @Result(column = "id", property = "id", javaType = Long.class),
             @Result(column = "transport_type_id", property = "transportType", javaType = TransportType.class,
                     one = @One(select = AppConstants.SELECT_TRANSPORT_TYPE)),
-            @Result(column ="id" ,property = "lineSchedules" ,javaType = List.class,
-                    many = @Many(select = AppConstants.SELECT_LINE_SCHEDULE_BY_LINE_ID))
+            @Result(column ="id" ,property = "lineStops" ,javaType = List.class,
+                    many = @Many(select = AppConstants.SELECT_LINE_STOPS_BY_LINE_ID))
     })
     List<Line> findAll();
 
@@ -29,8 +29,19 @@ public interface LineRepository {
             @Result(column = "id", property = "id", javaType = Long.class),
             @Result(column = "transport_type_id", property = "transportType", javaType = TransportType.class,
                     one = @One(select = AppConstants.SELECT_TRANSPORT_TYPE)),
-            @Result(column ="id" ,property = "lineSchedules" ,javaType = List.class,
-                    many = @Many(select = AppConstants.SELECT_LINE_SCHEDULE_BY_LINE_ID))
+            @Result(column ="id" ,property = "lineStops" ,javaType = List.class,
+                    many = @Many(select = AppConstants.SELECT_LINE_STOPS_BY_LINE_ID))
     })
     Optional<Line> findById(Long id);
+
+
+    @Select("select * from lines where name=#{name}")
+    @Results({
+            @Result(column = "id", property = "id", javaType = Long.class),
+            @Result(column = "transport_type_id", property = "transportType", javaType = TransportType.class,
+                    one = @One(select = AppConstants.SELECT_TRANSPORT_TYPE)),
+            @Result(column ="id" ,property = "lineStops" ,javaType = List.class,
+                    many = @Many(select = AppConstants.SELECT_LINE_STOPS_BY_LINE_ID))
+    })
+    Optional<Line> findByName(String name);
 }

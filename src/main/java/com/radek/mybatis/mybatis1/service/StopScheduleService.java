@@ -1,7 +1,7 @@
 package com.radek.mybatis.mybatis1.service;
 
-import com.radek.mybatis.mybatis1.entity.StopSchedule;
-import com.radek.mybatis.mybatis1.repository.StopScheduleRepository;
+import com.radek.mybatis.mybatis1.entity.StopLine;
+import com.radek.mybatis.mybatis1.repository.StopLineRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,14 +10,14 @@ import java.util.List;
 @Service
 public class StopScheduleService {
 
-    private StopScheduleRepository stopScheduleRepository;
+    private StopLineRepository stopLineRepository;
 
     @Autowired
-    public StopScheduleService(StopScheduleRepository stopScheduleRepository) {
-        this.stopScheduleRepository = stopScheduleRepository;
+    public StopScheduleService(StopLineRepository stopLineRepository) {
+        this.stopLineRepository = stopLineRepository;
     }
 
-    public List<StopSchedule> findAll() {
-        return stopScheduleRepository.findAll();
+    public List<StopLine> findAll() {
+        return stopLineRepository.findAll();
     }
 }
